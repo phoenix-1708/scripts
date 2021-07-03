@@ -16,10 +16,10 @@ echo "Adding GitHub apt key and repository!"
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
 
-sudo apt update
+sudo apt-get update
 
 # Install lsb-core packages
-sudo apt install lsb-core -y
+sudo apt-get install lsb-core -y
 
 LSB_RELEASE="$(lsb_release -d | cut -d ':' -f 2 | sed -e 's/^[[:space:]]*//')"
 
@@ -32,7 +32,7 @@ elif [[ ${LSB_RELEASE} =~ "Debian GNU/Linux 10" ]]; then
 fi
 
 sudo DEBIAN_FRONTEND=noninteractive \
-    apt install \
+    apt-get install \
     adb autoconf automake axel bc bison build-essential \
     ccache clang cmake expat fastboot flex g++ \
     g++-multilib gawk gcc gcc-multilib git gnupg gperf \
